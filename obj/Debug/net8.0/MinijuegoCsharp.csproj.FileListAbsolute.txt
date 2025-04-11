@@ -1,0 +1,15 @@
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\bin\Debug\net8.0\MinijuegoCsharp.exe
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\bin\Debug\net8.0\MinijuegoCsharp.deps.json
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\bin\Debug\net8.0\MinijuegoCsharp.runtimeconfig.json
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\bin\Debug\net8.0\MinijuegoCsharp.dll
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\bin\Debug\net8.0\MinijuegoCsharp.pdb
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\MinijuegoCsharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\MinijuegoCsharp.AssemblyInfoInputs.cache
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\MinijuegoCsharp.AssemblyInfo.cs
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\MinijuegoCsharp.csproj.CoreCompileInputs.cache
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\MinijuegoCsharp.sourcelink.json
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\MinijuegoCsharp.dll
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\refint\MinijuegoCsharp.dll
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\MinijuegoCsharp.pdb
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\MinijuegoCsharp.genruntimeconfig.cache
+C:\Users\wpyg1\Desktop\POO\Minijuego.c#\MinijuegoCsharp\obj\Debug\net8.0\ref\MinijuegoCsharp.dll
