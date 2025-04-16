@@ -26,63 +26,59 @@ public class Vendedor {
     }
 
     public void Vender(Leon leon) {
-        bool salir = false;
-        while (!salir) {
-            Console.Clear();
-            Console.WriteLine("\n----------* TIENDA *----------");
-            Console.WriteLine($"Dinero: {leon.Dinero}$\n");
-            
-            int numItem = 1;
-            var itemsConStock = new List<Item>();
-            for (int i = 0; i < Inventario.Count; i++) {
-                if (Cantidad[i] > 0) {
-                    Console.Write($"{numItem++}. ");
-                    Inventario[i].invVendedor(Inventario, Cantidad);
-                    itemsConStock.Add(Inventario[i]);
-                }
-            }
-                
-            Console.WriteLine($"{Inventario.Count + 1}. Volver");
-            Console.Write("Comprar: ");
-            
-            if (!int.TryParse(Console.ReadLine(), out int opcion)) continue;
+    bool salir = false;
+    while (!salir) {
+        Console.Clear();
+        Console.WriteLine("\n----------* TIENDA *----------");
+        Console.WriteLine($"Dinero: {leon.Dinero}$\n");
 
-            if (opcion == Inventario.Count + 1) {
-                salir = true;
+        var itemsConStock = new List<Item>();
+        var cantidadesConStock = new List<int>();
+
+        for (int i = 0; i < Inventario.Count; i++) {
+            if (Cantidad[i] > 0) {
+                itemsConStock.Add(Inventario[i]);
+                cantidadesConStock.Add(Cantidad[i]);
+                Console.Write($"{itemsConStock.Count}. ");
+                Inventario[i].invVendedor(Inventario, Cantidad);
             }
-            else if (opcion >= 1 && opcion <= Inventario.Count) {
-                int indice = opcion - 1;
-                Item item = Inventario[indice];
-                
-                if (Cantidad[indice] == 0) {
-                    Console.WriteLine("\n¡Objeto agotado!");
-                    continue;
+        }
+
+        Console.WriteLine($"{itemsConStock.Count + 1}. Volver");
+        Console.Write("Comprar: ");
+        
+        if (!int.TryParse(Console.ReadLine(), out int opcion)) continue;
+
+        if (opcion == itemsConStock.Count + 1) {
+            salir = true;
+        }
+        else if (opcion >= 1 && opcion <= itemsConStock.Count) {
+            int indiceOriginal = Inventario.IndexOf(itemsConStock[opcion - 1]);
+            Item item = itemsConStock[opcion - 1];
+
+            if (leon.Dinero >= item.GetPCompra()) {
+                leon.Dinero -= item.GetPCompra();
+                Cantidad[indiceOriginal]--;
+
+                if (Cantidad[indiceOriginal] == 0) {
+                    Inventario.RemoveAt(indiceOriginal);
+                    Cantidad.RemoveAt(indiceOriginal);
                 }
-                
-                if (leon.Dinero >= item.GetPCompra()) {
-                    leon.Dinero -= item.GetPCompra();
-                    Cantidad[indice]--;
-                    
-                    if (Cantidad[indice] == 0) {
-                        Inventario.RemoveAt(indice);
-                        Cantidad.RemoveAt(indice);
-                    }
-                    
-                    if (item is Arma arma) {
-                        leon.Inventario.Add(arma.Clone());
-                    }
-                    else {
-                        leon.Inventario.Add(item);
-                    }
-                    leon.Cantidad.Add(1);
-                    Console.WriteLine($"\n¡Comprado {item.GetNombre()}!");
-                }
-                else {
-                    Console.WriteLine("\n¡Dinero insuficiente!");
-                }
+
+                if (item is Arma arma)
+                    leon.Inventario.Add(arma.Clone());
+                else
+                    leon.Inventario.Add(item);
+
+                leon.Cantidad.Add(1);
+                Console.WriteLine($"\n¡Comprado {item.GetNombre()}!");
+            }
+            else {
+                Console.WriteLine("\nNo tienes suficiente dinero.");
             }
         }
     }
+}
 
     public void Mejorar(Leon leon) {
     bool salir = false;
